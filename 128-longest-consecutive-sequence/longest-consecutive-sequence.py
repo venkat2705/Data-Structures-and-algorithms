@@ -9,28 +9,3 @@ class Solution:
                     length += 1
                 ans = max(ans,length)
         return ans
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        # hash_set = set(nums)
-        # ans=0
-        # for n in nums:
-        #     if n-1 not in hash_set:
-        #         l = 0
-        #         while n+l in hash_set:
-        #             l+=1
-        #         ans = max(l,ans)
-        # return ans
