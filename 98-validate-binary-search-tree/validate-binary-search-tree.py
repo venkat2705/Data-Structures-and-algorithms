@@ -13,7 +13,6 @@ class Solution:
             lres = mn(root.left)
             rres = mn(root.right)
             res = min(lres,res,rres)
-            # res = min(rres,res)
             return res
         
         def mx(root):
@@ -22,8 +21,7 @@ class Solution:
             res = root.val
             lres = mx(root.left)
             rres = mx(root.right)
-            res = max(lres,res)
-            res = max(rres,res)
+            res = max(lres,res,rres)
             return res
         
         def isbst(root):
