@@ -4,12 +4,11 @@ with cte as (select customer_id, name, visited_on, sum(amount) as amount from cu
 
 cte2 as (select visited_on, 
 sum(amount) over(ORDER BY visited_on RANGE BETWEEN INTERVAL '6' DAY PRECEDING AND CURRENT ROW) as amount, 
-round(avg(amount) over(ORDER BY visited_on RANGE BETWEEN INTERVAL '6' DAY PRECEDING AND CURRENT ROW),2)
-as average,row_number() over(order by visited_on) as rn from cte )
+row_number() over(order by visited_on) as rn from cte )
 
 # select * from cte2
 
-select visited_on, amount, average as average_amount from cte2 where visited_on>'2019-01-06' and rn > 6 order by visited_on  
+select visited_on, amount, round(amount/7,2) as average_amount from cte2 where visited_on>'2019-01-06' and rn > 6 order by visited_on  
 # select * from cte2
 
 
