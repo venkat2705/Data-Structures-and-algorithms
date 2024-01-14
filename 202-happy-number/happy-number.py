@@ -1,7 +1,7 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        if n == 1:
-            return True
+        # if n == 1:
+        #     return True
         while True:
             r = 0
             res = 0
@@ -14,7 +14,7 @@ class Solution:
             if res < 7:
                 return False
             n = res
-            
+
 
             
 
