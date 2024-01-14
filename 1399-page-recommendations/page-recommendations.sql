@@ -7,33 +7,3 @@ SELECT distinct page_id as recommended_page
 FROM Likes 
 where user_id in (SELECT user2_id FROM cte)
 AND page_id not in (SELECT page_id FROM likes WHERE user_id = 1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# with cte as (select user1_id as user_id, user2_id as friend from friendship where user1_id = 1
-# union all
-# select user2_id as user_id,user1_id as friend  from friendship where user2_id = 1)
-
-# select distinct page_id as recommended_page from likes l join cte on l.user_id = cte.friend where l.page_id not in (select page_id from likes where user_id = 1)
-
-
-
