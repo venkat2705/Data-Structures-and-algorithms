@@ -6,10 +6,8 @@ cte2 as (select visited_on,
 sum(amount) over(ORDER BY visited_on RANGE BETWEEN INTERVAL '6' DAY PRECEDING AND CURRENT ROW) as amount, 
 row_number() over(order by visited_on) as rn from cte )
 
-# select * from cte2
 
-select visited_on, amount, round(amount/7,2) as average_amount from cte2 where visited_on>'2019-01-06' and rn > 6 order by visited_on  
-# select * from cte2
+select visited_on, amount, round(amount/7,2) as average_amount from cte2 where rn > 6 order by visited_on  
 
 
 
