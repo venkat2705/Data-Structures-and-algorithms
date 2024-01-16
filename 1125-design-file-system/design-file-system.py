@@ -4,9 +4,9 @@ class FileSystem:
         self.map_path = {"" : -1}
 
     def createPath(self, path: str, value: int) -> bool:
-        parent1 = path.split("/")[:-1]
-        parent = "/".join(parent1)
-        parent1 = path[:path.rfind("/")]
+        parent = path.split("/")[:-1]
+        parent = "/".join(parent)
+        # parent1 = path[:path.rfind("/")]
         # print(parent1)
         # print(parent)
         if path not in self.map_path and parent in self.map_path:
