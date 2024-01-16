@@ -11,6 +11,13 @@ class MyLinkedList:
         self.right = ListNode(0)
         self.left.next = self.right
         self.right.prev = self.left
+    
+    def swap(self,prev,node,next):
+        prev.next = node
+        next.prev = node 
+        node.next = next
+        node.prev = prev
+
 
     def get(self, index: int) -> int:
         cur = self.left.next
@@ -23,18 +30,12 @@ class MyLinkedList:
 
     def addAtHead(self, val: int) -> None:
         node, prev, next = ListNode(val), self.left, self.left.next
-        prev.next = node
-        next.prev = node 
-        node.next = next
-        node.prev = prev
+        self.swap(prev,node,next)
         
 
     def addAtTail(self, val: int) -> None:
         node, prev, next = ListNode(val), self.right.prev, self.right
-        prev.next = node
-        next.prev = node 
-        node.next = next
-        node.prev = prev
+        self.swap(prev,node,next)
 
     def addAtIndex(self, index: int, val: int) -> None:
         cur = self.left.next
@@ -43,10 +44,7 @@ class MyLinkedList:
             index -= 1
         if cur and index == 0:
             node, prev, next = ListNode(val), cur.prev, cur
-            node.next = next
-            node.prev = prev
-            prev.next = node
-            next.prev = node
+            self.swap(prev,node,next)
 
 
     def deleteAtIndex(self, index: int) -> None:
