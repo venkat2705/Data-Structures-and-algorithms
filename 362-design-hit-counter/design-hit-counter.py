@@ -7,11 +7,7 @@ class HitCounter:
         self.data.append(timestamp)
 
     def getHits(self, timestamp: int) -> int:
-        ans = 0
-        for i in self.data:
-            if i > timestamp - 300:
-                ans+=1
-        return ans
+        return len(self.data) - bisect_right(self.data, timestamp - 300)
 
         
 
