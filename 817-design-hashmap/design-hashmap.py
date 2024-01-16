@@ -1,8 +1,7 @@
 class MyHashMap:
 
     def __init__(self):
-        MAX_ARR=10**6+1
-        self.arr_map=[-1]*(MAX_ARR)
+        self.arr_map=[-1]*1000001
 
     def put(self, key: int, value: int) -> None:
         self.arr_map[key]=value
