@@ -9,7 +9,7 @@ class Codec:
     def encode(self, longUrl: str) -> str:
         """Encodes a URL to a shortened URL.
         """
-        shortUrl = len(self.encode_map)+1
+        shortUrl = self.base + str(len(self.encode_map)+1)
         self.encode_map[longUrl] = shortUrl
         self.decode_map[shortUrl] = longUrl
         return shortUrl
