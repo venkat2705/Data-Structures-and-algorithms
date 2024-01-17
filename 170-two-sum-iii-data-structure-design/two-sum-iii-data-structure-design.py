@@ -1,19 +1,19 @@
 class TwoSum:
 
     def __init__(self):
-        self.list = []
+        self.nums={}
 
     def add(self, number: int) -> None:
-        self.list.append(number)
+        if number in self.nums:
+            self.nums[number]+=1
+        else:
+            self.nums[number]=1
 
     def find(self, value: int) -> bool:
-        d = {}
-        if len(self.list) < 2:
-            return False
-        for i in range(len(self.list)):
-            d[value - self.list[i]] = i
-        for i in range(len(self.list)):
-            if self.list[i] in d and i != d[self.list[i]]:
+        for i in self.nums:
+            if value-i in self.nums:
+                if i==value-i and self.nums[i]==1:
+                    continue
                 return True
         return False
 
