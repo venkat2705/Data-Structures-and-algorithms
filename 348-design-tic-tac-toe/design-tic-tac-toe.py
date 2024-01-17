@@ -19,11 +19,6 @@ class TicTacToe:
             return 1
         if self.rows[row] == -self.n or self.cols[col] == -self.n or self.dia[0] == -self.n or self.dia[1] == -self.n:
                 return 2
-        # for i in range(self.n):
-            # if self.rows[i] == self.n or self.cols[i] == self.n or self.dia[0] == self.n or self.dia[1] == self.n:
-            #     return 1
-            # if self.rows[i] == -self.n or self.cols[i] == -self.n or self.dia[0] == -self.n or self.dia[1] == -self.n:
-                return 2
         return 0
             
 
