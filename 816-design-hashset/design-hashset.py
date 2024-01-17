@@ -1,18 +1,18 @@
 class MyHashSet:
 
     def __init__(self):
-        self.map = {}
+        self.map = []
 
     def add(self, key: int) -> None:
         if key not in self.map:
-            self.map[key] = 1
+            self.map.append(key)
 
     def remove(self, key: int) -> None:
         if key in self.map:
-            del(self.map[key])
+            self.map.remove(key)
 
     def contains(self, key: int) -> bool:
-        return True if key in self.map else False
+        return key in self.map
 
 
 # Your MyHashSet object will be instantiated and called as such:
