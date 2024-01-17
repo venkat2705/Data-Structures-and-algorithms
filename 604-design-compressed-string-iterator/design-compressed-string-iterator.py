@@ -18,7 +18,8 @@ class StringIterator:
 
     def next(self) -> str:
         if not self.hasNext(): return ' '
-        if self.cnt == 0: self.moveNext()
+        if self.cnt == 0: 
+            self.moveNext()
         self.cnt -= 1
         return self.val
 
