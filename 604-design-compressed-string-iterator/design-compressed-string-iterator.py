@@ -8,7 +8,7 @@ class StringIterator:
         
     def moveNext(self):
         if self.pos >= len(self.s):
-            raise StopIteration
+            return
         self.val = self.s[self.pos]
         pos = self.pos + 1
         while pos < len(self.s) and self.s[pos].isdigit():
