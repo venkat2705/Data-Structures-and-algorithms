@@ -1,8 +1,25 @@
 # Write your MySQL query statement below
 
-with cte as (select p.*, experience_years, rank() over(partition by project_id order by experience_years desc) rnk from project p left join employee e on p.employee_id = e.employee_id)
+with cte as (select p.*, e.experience_years, rank() over(partition by project_id order by experience_years desc) as rnk from project p join employee e on p.employee_id = e.employee_id)
 
-select project_id,employee_id from cte where rnk = 1
+select project_id, employee_id from cte where rnk = 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- with cte as (select p.*, experience_years, rank() over(partition by project_id order by experience_years desc) rnk from project p left join employee e on p.employee_id = e.employee_id)
+
+-- select project_id,employee_id from cte where rnk = 1
 
 
 
