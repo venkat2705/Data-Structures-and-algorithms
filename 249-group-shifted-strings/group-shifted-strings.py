@@ -9,7 +9,7 @@ class Solution:
             if key in d:
                 d[key] += [word]
             else:
-                d[key] = []+[word]
+                d[key] = [word]
         print(d)
         return d.values()
         
