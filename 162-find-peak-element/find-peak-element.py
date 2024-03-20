@@ -3,7 +3,8 @@ class Solution:
         n = len(nums)
         low, high = 0, n-1
         while low <= high:
-            mid = low + ((high - low)//2)
+            mid = (low+high)//2
+            # mid = low + ((high - low)//2)
             if mid > 0 and nums[mid] < nums[mid-1]:
                 high = mid-1
             elif mid < n-1 and nums[mid] < nums[mid+1]:
