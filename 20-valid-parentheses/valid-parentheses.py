@@ -2,16 +2,13 @@ class Solution:
     def isValid(self, s: str) -> bool:
         d = {')':'(',']':'[','}':'{'}
         st = []
-        for i in range(len(s)):
-            if s[i] in ['[','{','(']:
-                st.append(s[i])
+        for i in s:
+            if i in '({[':
+                st.append(i)
             else:
-                if len(st)!=0 and d[s[i]] == st[-1]:
-                    st.pop()
-                else:
+                if len(st) == 0 or st.pop() != d[i]:
                     return False
-        return len(st) == 0 
-
-
+                # st.pop()
         
-
+        return True if len(st) == 0 else False
+ 
