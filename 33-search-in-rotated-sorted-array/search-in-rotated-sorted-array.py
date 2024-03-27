@@ -1,19 +1,19 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l, h =0, len(nums)-1 
+        l, h = 0, len(nums) - 1
         while l <= h:
-            m = (l+h)//2
-            if nums[m] == target:
-                return m
-            if nums[m] >= nums[l]:
-                if target >= nums[l] and target < nums[m]:
-                    h = m-1
+            mid = (l+h)//2
+            if nums[mid] == target:
+                return mid
+            if nums[mid] >= nums[l]:
+                if target < nums[mid] and target >= nums[l]:
+                    h = mid - 1
                 else:
-                    l = m+1
+                    l = mid + 1
             else:
-                if target > nums[m] and target <= nums[h]:
-                    l = m+1
+                if target > nums[mid] and target <= nums[h]:
+                    l = mid + 1
                 else:
-                    h = m-1
-        return -1 
-        
+                    h = mid - 1
+        return -1
+ 
