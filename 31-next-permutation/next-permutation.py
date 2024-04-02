@@ -11,4 +11,5 @@ class Solution:
             j -= 1
         nums[j], nums[k-1] = nums[k-1], nums[j]
         nums[k:] = nums[n-1: k-1: -1]
+        
   
